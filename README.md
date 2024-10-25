@@ -1,36 +1,52 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+#  XP Investimentos
 
-## Getting Started
+## Sobre o Projeto
+Este é um projeto desenvolvido atrávez de um teste técnico disponibilizado pela XP Investimentos, onde foi solicitado o desenvolvimento de uma aplicação de investimentos em ações e funcionalidades de conta digital. O objetivo é demonstrar habilidades em next e desenvolvimento frontend quanto também em backend, entregando uma aplicação funcional com foco em experiência do usuário e usabilidade, além de ir além dos requisitos mínimos para oferecer um diferencial criativo.
 
-First, run the development server:
+## Tecnologias Utilizadas
+- **Frontend**: Next
+- **Backend**: Node
+- **Ferramentas e Bibliotecas**: 
+  - ZOD
+  - Sonner
+  - Shadcnui
+  - Tailwind
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Funcionalidades
+### Funcionalidades Principais
+- **Tela de Login**: permite o acesso seguro à aplicação com validações de e-mail e senha.
+- **Tela de Depósito e Saque**: possibilita operações básicas de movimentação na conta digital.
+- **Tela de Listagem de Ações**: exibe todas as ações disponíveis e diferencia ações na carteira das não investidas.
+- **Tela de Compra e Venda de Ações**: permite realizar operações de compra e venda de ativos.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Funcionalidades Adicionais
+- **Salvamento de Usuário Local**: armazena o último usuário logado e exibe data e hora do último acesso na tela de login.
+- **Tratamento de Erros**: captura e exibe mensagens de erro amigáveis ao usuário.
+- **Testes Unitários**: verificação de funcionalidades críticas da aplicação.
+- **Deploy**: aplicação disponível online para acesso.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## API Endpoints
+### Requisições para Investimentos
+- **Compra de Ações**: `POST /investimentos/comprar`
+  - Campos: `codCliente`, `codAtivo`, `qtdeAtivo`
+  - Validação: Quantidade de ativo comprada deve ser <= quantidade disponível.
+  
+- **Venda de Ações**: `POST /investimentos/vender`
+  - Campos: `codCliente`, `codAtivo`, `qtdeAtivo`
+  - Validação: Quantidade de ativo vendida deve ser <= quantidade na carteira.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **Consulta por Cliente**: `GET /ativos/{cod-cliente}`
+  - Campos: `codCliente`, `codAtivo`, `qtdeAtivo`, `valor`
 
-## Learn More
+- **Consulta por Ativo**: `GET /ativos/{cod-ativo}`
+  - Campos: `codAtivo`, `qtdeAtivo`, `valor`
 
-To learn more about Next.js, take a look at the following resources:
+### Requisições para Conta Digital
+- **Depósito**: `POST /conta/deposito`
+  - Campos: `codCliente`, `valor`
+  - Validação: Valor deve ser positivo e > 0.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **Saque**: `POST /conta/saque`
+  - Campos: `codCliente`, `valor`
+  - Validação: Valor deve ser <= saldo disponível e > 0.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
