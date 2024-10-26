@@ -1,3 +1,4 @@
+import Link from "next/link";
 import ImageRender from "../../public/assets/render-phone.png"
 import Image from "next/image";
 
@@ -36,7 +37,7 @@ export default function Home() {
           </p>
 
           <button className=" h-[40px] px-5 rounded-[4px] bg-transparent border-2 border-gray-900 text-gray-900 font-semibold hover:bg-gray-950 hover:text-slate-50" >
-            Acesse a Plataforma
+            <Link href={"/login"}>Acesse a Plataforma</Link>
           </button>
         </div>
 
