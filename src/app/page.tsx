@@ -1,22 +1,12 @@
 import Link from "next/link";
 import ImageRender from "../../public/assets/render-phone.png"
 import Image from "next/image";
+import Header from "@/components/molecula/header";
 
 export default function Home() {
   return (
     <div className="h-[100vh] bg-slate-100 ">
-      <header className="flex w-full justify-end p-5">
-        <div></div>
-
-        <nav className="space-x-4">
-          <button className="w-[120px] h-[40px] px-5 rounded-[24px] bg-transparent border-2 border-gray-900 text-gray-900 font-semibold hover:bg-gray-950 hover:text-slate-50" >
-            Sign Up
-          </button>
-          <button className="w-[120px] h-[40px] px-5 rounded-[24px] bg-gray-900 text-slate-50 font-semibold hover:bg-transparent hover:border-2 hover:border-gray-900 hover:text-slate-900 " >
-            Log in
-          </button>
-        </nav>
-      </header>
+      <Header/>
 
       <section className="w-full min-h-[80vh] flex flex-col-reverse lg:flex-row lg:items-center lg:justify-between gap-6">
         <div className="">

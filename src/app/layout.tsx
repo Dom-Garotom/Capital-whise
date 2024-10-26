@@ -14,7 +14,7 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "XP-Investiment",
+  title: "Capital Whise",
   description: "Aplicação web de investimentos em ações.",
 };
 
