@@ -29,7 +29,7 @@ export default function LogIn() {
         const pass = usersDb.find(a => data.email == a.email && data.senha == a.senha);
 
         if (pass) {
-            router.push("/");
+            router.push("/home");
         }
 
     }

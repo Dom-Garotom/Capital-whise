@@ -36,7 +36,7 @@ export default function SignUp() {
         usersDb.push(data)
 
         if (data) {
-            router.push("/");
+            router.push("/home");
         }
         
     }
