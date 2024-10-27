@@ -5,9 +5,10 @@ import { ReactNode } from "react"
 type Props = {
     variant: 'sinUp' | 'login'
     children: ReactNode
+    handleSubmit : () => void
 }
 
-export default function Form({ variant , children }: Props) {
+export default function Form({ variant , children , handleSubmit}: Props) {
     return (
         <div>
             <h2 className="font-semibold text-3xl mb-10 text-slate-700">Capital Whise</h2>
@@ -19,7 +20,7 @@ export default function Form({ variant , children }: Props) {
                 Conecte-se à nossa plataforma e tenha acesso às melhores oportunidades do mercado de ações.
             </p>
 
-            <form action="" className="w-full mt-10 space-y-6">
+            <form onSubmit={handleSubmit} className="w-full mt-10 space-y-6">
                 
                 {children}
 
@@ -32,6 +33,7 @@ export default function Form({ variant , children }: Props) {
                     
                 <ButtonSubmit
                     content={variant == "login" ? ("Entrar") : ("Criar")}
+                    type="submit"
                 />
 
                 <div className="w-full h-[1px] bg-slate-800 my-10"></div>
