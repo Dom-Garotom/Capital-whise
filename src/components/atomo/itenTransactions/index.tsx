@@ -3,7 +3,7 @@ import { ArrowRightLeft, MoveDownLeft, MoveUpRight } from 'lucide-react'
 import { twJoin } from 'tailwind-merge'
 
 type Props = {
-    tipoDeposito: "Deposito" | "Saque" | "Transferência"
+    tipoDeposito: string
     data: string,
     hour: string,
     value: number,
